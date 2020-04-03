@@ -1,15 +1,12 @@
-var n = prompt("n", "");
-var count = 1;
-for(let i = 2; i < n; i++) {
-  for(let j = 1; j <= i; j++){
-    if((n % j == 0) && (i % j == 0)) {
-      if(j != 1) {
-        count++;
-      }
-    }
+var x = prompt("x", "");
+function Lx(k, x) {
+  if(k == 1){
+    return x;
+  } else if(k == 0) {
+    return 1;
+  } else {
+    return x * Lx((k - 1), x) - (Math.pow((k - 1), 2) / ((2 * k - 3) * (2 * k - 1))) * Lx((k - 2), x);
   }
-  if(count == 1) {
-    alert(i);
-  }
-  count = 1;
 }
+alert(Lx(5, x));
+alert(Lx(7, x));
