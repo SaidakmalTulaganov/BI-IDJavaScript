@@ -1,0 +1,56 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://vyatgu.ru/prkis/lab/auto"
+           targetNamespace="http://vyatgu.ru/prkis/lab/auto" elementFormDefault="qualified">
+
+    <xs:element name="getAllManufacturersRequest">
+            <xs:complexType>
+            </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllManufacturersResponse">
+            <xs:complexType>
+                    <xs:sequence>
+                            <xs:element name="manufacturers" type="tns:manufacturers" maxOccurs="unbounded"/>
+                    </xs:sequence>
+            </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddManufacturersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="manufacturers" type="tns:manufacturers"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddManufacturersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="manufacturers" type="tns:manufacturers"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getManufacturersByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getManufacturersByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="manufacturers" type="tns:manufacturers"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="manufacturers">
+        <xs:sequence>
+            <xs:element name="id_manufacturer" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="country" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

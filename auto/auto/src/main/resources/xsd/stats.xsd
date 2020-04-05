@@ -1,0 +1,88 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://vyatgu.ru/prkis/lab/auto"
+           targetNamespace="http://vyatgu.ru/prkis/lab/auto" elementFormDefault="qualified">
+
+    <xs:element name="getAllStatsRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllStatsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddStatsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddStatsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getStatsByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getStatsByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteStatsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDeleteStatsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getChangeStatsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getChangeStatsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stats" type="tns:stats"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="stats">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="year" type="xs:long"/>
+            <xs:element name="id_body" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

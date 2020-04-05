@@ -1,0 +1,56 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://vyatgu.ru/prkis/lab/auto"
+           targetNamespace="http://vyatgu.ru/prkis/lab/auto" elementFormDefault="qualified">
+
+    <xs:element name="getAllBodiesRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllBodiesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bodies" type="tns:bodies" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddBodiesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bodies" type="tns:bodies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddBodiesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bodies" type="tns:bodies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBodiesByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBodiesByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bodies" type="tns:bodies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="bodies">
+        <xs:sequence>
+            <xs:element name="id_body" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

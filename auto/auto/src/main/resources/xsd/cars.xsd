@@ -1,0 +1,60 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://vyatgu.ru/prkis/lab/auto"
+           targetNamespace="http://vyatgu.ru/prkis/lab/auto" elementFormDefault="qualified">
+
+    <xs:element name="getAllCarsRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllCarsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cars" type="tns:cars" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddCarsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cars" type="tns:cars"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAddCarsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cars" type="tns:cars"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarsByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarsByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cars" type="tns:cars"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="cars">
+        <xs:sequence>
+            <xs:element name="id_car" type="xs:long"/>
+            <xs:element name="id_manufacturer" type="xs:long"/>
+            <xs:element name="id_body" type="xs:long"/>
+            <xs:element name="year" type="xs:long"/>
+            <xs:element name="price" type="xs:long"/>
+            <xs:element name="quantity" type="xs:long"/>
+            <xs:element name="defective" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
